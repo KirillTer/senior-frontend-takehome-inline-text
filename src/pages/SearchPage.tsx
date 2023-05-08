@@ -1,23 +1,21 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react';
+import React, {FC, useEffect, useState} from 'react';
+import './SearchPage.css';
+import { InputComponent } from '../components/InputComponent';
+import { AdvisorComponent } from '../components/AdvisorComponent';
+import { ProTipComponent } from '../components/ProTipComponent';
+import { AdvancedOptionsComponent } from '../components/AdvancedOptionsComponent';
+import { useCont } from "../hooks/ContextHook";
 
-import HelpIcon from '../assets/svg/Help Icon.svg';
-import LoadingSpinner from '../assets/svg/Loading Spinner.svg';
-import AnnotationHeart from '../assets/svg/annotation-heart.svg';
-import Briefcase from '../assets/svg/briefcase-02.svg';
-import ChevronDown from '../assets/svg/chevron-down.svg';
-import FileIcon from '../assets/svg/file-02.svg';
 import HeadingSquare from '../assets/svg/heading-square.svg';
 import InfoCircle from '../assets/svg/info-circle.svg';
 import Lightbulb from '../assets/svg/lightbulb-02.svg';
 import List1Icon from '../assets/svg/list-1.svg';
 import ListIcon from '../assets/svg/list.svg';
-import ComposeLogo from '../assets/svg/logo_compose.png.svg';
 import Mail from '../assets/svg/mail-02.svg';
 import Menu from '../assets/svg/menu-05.svg';
 import MultiParagraphSquare from '../assets/svg/multi-paragraph-square.svg';
 import ParagraphSquare from '../assets/svg/paragraph-square.svg';
-import ZapFast from '../assets/svg/zap-fast.svg';
 
 interface ListOption {
   text: string;
@@ -39,13 +37,20 @@ const listOptions: ListOption[] = [
   ['email to', Mail],
 ].map((lo) => ({ text: lo[0], iconUri: lo[1] }));
 
-export interface InlineTextProps {
-  /**
-   * DOM Id of the element
-   */
-  id?: string;
-}
+export const SearchPage: FC = () => {
+  const { inputValue } = useCont();
+  const [ options, setOptions] = useState<ListOption[]>(listOptions)
 
-export const InlineText: React.FC<InlineTextProps> = ({ id }) => {
-  return <div id={id}>Your Inline Text Command impl goes here. Good luck!</div>;
+  useEffect(() => {
+    setOptions(listOptions.filter(item => item.text.includes(inputValue)))
+  }, [inputValue])
+  
+  return (
+    <div className="Container">
+      <InputComponent />
+      <AdvisorComponent listOptions={options}/>
+      {(options.length < 2) && <ProTipComponent />}
+      <AdvancedOptionsComponent />
+    </div>
+  )
 };

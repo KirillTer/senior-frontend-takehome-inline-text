@@ -1,0 +1,179 @@
+.Container {
+  max-height: 492px;
+  min-height: 364px;
+  width: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
+}
+
+.InputComponent {
+  max-height: 56px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px;
+  gap: 8px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EAECF0;
+}
+
+.InputComponent__ImageLogo {
+  height: 24px;
+  width: 24px;
+}
+
+.InputComponent__Text {
+  max-height: 24px;
+  width: 184px;
+  display: flex;
+  white-space: nowrap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
+}
+
+.InputComponent__Input {
+  max-height: 24px;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
+}
+
+.InputComponent__Input:focus {
+  outline: none;
+}
+
+.InputComponent__ImageHelp {
+  width: 24px;
+  margin-left: auto;
+}
+
+.AdvisorComponent {
+  max-height: 376px;
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.AdvisorComponent__Header {
+  color: #475467;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 10px;
+}
+
+.AdvisorItem {
+  width: 242px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+}
+
+.AdvisorItem:hover {
+  background: #F4F6F8;
+  border-radius: 8px;
+}
+
+.AdvisorItem__Image {
+  width: 24px;
+  height: 24px;
+}
+
+.ProTipComponent {
+  height: 162px;
+  width: 246px;
+  margin-top: auto;
+  margin-left: 18px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ProTipComponent__Badge {
+  width: 57px;
+  height: 22px;
+  margin: 16px 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #6941C6;
+  background: #F9F5FF;
+  border-radius: 16px;
+}
+
+.ProTipComponent__Text {
+  margin: 16px 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #101828;
+}
+
+.ProTipComponent__Command {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #475467;
+}
+
+.AdvancedOptionsComponent {
+  max-height: 60px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px;
+  margin-top: auto;
+  gap: 8px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.AdvancedOptionsComponent__ImageLogo {
+  height: 24px;
+  width: 24px;
+}
+
+.AdvancedOptionsComponent__Text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #101828;
+}
+
+.AdvancedOptionsComponent__Chevron {
+  width: 24px;
+  margin-left: auto;
+}

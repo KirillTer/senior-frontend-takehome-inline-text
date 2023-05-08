@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import { InlineText } from './components/InlineText';
+import { SearchPage } from './pages/SearchPage';
+import { ContextProvider } from "./hooks/ContextHook";
 
 function App() {
   return (
-    <div className="App">
-      <InlineText id="inlineText" />
-    </div>
+    <ContextProvider>
+      <div className="App">
+        <SearchPage />
+      </div>
+    </ContextProvider>
   );
 }
 
